@@ -32,29 +32,23 @@ buttonLogin.addEventListener('click',
 
 // inizio parte gioca con i dadi
 
-const generatoreGiocatore = [ '1', '2','3','4','5','6']
-console.log(generatoreGiocatore)
-const generatoreComputer = [ '6', '5','3','4','2','1']
-console.log(generatoreComputer)
-
 const gioca = document.getElementById('btn-gioca');
 gioca.addEventListener('click',
 
     function() {
         // genero numero per il giocatore
-        //let numeroGiocatore = Math.floor(Math.random() * 6 + 1);
-        let numeroGiocatore = generatoreGiocatore[Math.floor(generatoreGiocatore.length * Math.random())]
+        let numeroGiocatore = Math.floor(Math.random() * 6) + 1;
         console.log(numeroGiocatore)
         document.getElementById('NUmero-giocatore').innerHTML ='Il numero del giocatore è ' + numeroGiocatore;
         // genero numero per il computer
-        let numeroComputer = generatoreComputer[Math.floor(generatoreComputer.length * Math.random())]
+        let numeroComputer = Math.floor(Math.random() * 6) + 1;
         console.log(numeroComputer)
-        document.getElementById('Numero-computer').innerHTML ='Il numero del computer è '+ numeroGiocatore;
+        document.getElementById('Numero-computer').innerHTML ='Il numero del computer è '+ numeroComputer;
 
         if ( numeroGiocatore > numeroComputer){
             alert("Vince il giocatore")
         }
-        else if ( numeroGiocatore < numeroComputer){
+        else if ( numeroComputer > numeroGiocatore){
             alert("Vince il computer")
         }
 
